@@ -22,9 +22,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache:
-          npm: true
-          path: vue-project
+        cache: 'npm'
     - run: cd vue-project && npm ci
     - run: cd vue-project && npm run build --if-present
     - run: cd vue-project && npm test
